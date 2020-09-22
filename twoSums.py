@@ -1,9 +1,11 @@
 import sys
 
 def twoSums(list,sum):
+    sum = int(sum)
     pair = []
     hashTable = {}
     for index, value in enumerate(list):
+        value = int(value)
         complement = sum - value
         if complement not in hashTable:
             hashTable[value] = index
@@ -20,8 +22,8 @@ def twoSums(list,sum):
 
 if __name__ == "__main__":
     if(len(sys.argv) == 3):
-        input = sys.argv[3][1,len(sys.argv-1)].split(",")
-        sum = sys.argv[4]
+        input = (sys.argv[1][1:len(sys.argv[1])-1]).split(",")
+        sum = sys.argv[2]
         output = twoSums(input,sum)
         print(output)
     elif(len(sys.argv) == 1):
